@@ -10,7 +10,10 @@
 		<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
 		<script crossorigin src="https://unpkg.com/@emotion/core@10/dist/core.umd.min.js"></script>
 		<script crossorigin src="https://unpkg.com/@emotion/styled@10/dist/styled.umd.min.js"></script>
-		<script crossorigin src="https://unpkg.com/emotion-theming@10/dist/emotion-theming.umd.min.js"></script>
+		<script crossorigin src="https://unpkg.com/emotion-theming@10/dist/emotion-theming.umd.min.js"></script>* <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="assez/csss/chat.css">
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="assez/csss/typing.css">
 		<script
 				crossorigin
 				src="https://unpkg.com/tock-react-kit@latest/build/tock-react-kit.umd.js"
@@ -50,10 +53,48 @@
 						<p><a href="#banner" class="scrolly">En savoir plus... <span
 								class="icon solid fa-chevron-down"></span></a></p>
 					</footer>
-					<div id="chat"></div>
-					<script>
-						TockReact.renderChat(document.getElementById('chat'), 'https://demo-bot.tock.ai/io/lavolp/tchatweb/web');
-					</script>
+
+					<div class="container_chatwindow">
+						<div class="chatbox">
+							<div class="chatbox__support">
+								<div class="chatbox__header">
+									<div class="chatbox__image--header">
+										<img src="pictures/chat.png" alt="image">
+									</div>
+									<div class="chatbox__content--header">
+										<h4 class="chatbox__heading--header">Tock votre assistant conversationnel</h4>
+										<p class="chatbox__description--header"></p>
+									</div>
+								</div>
+								<div class="chatbox__messages">
+									<div>
+										<div class="messages__item messages__item--visitor">
+											Bonjour !
+											Vous avez un projet de chatbot et des questions liées à sa mise en place, son prix, sa gestion au quotidien,…? Je suis là pour vous aider, n'hésitez pas! 🙂
+										</div>
+
+										<div class="messages__item messages__item--typing">
+											<span class="messages__dot"></span>
+											<span class="messages__dot"></span>
+											<span class="messages__dot"></span>
+										</div>
+									</div>
+								</div>
+								<div class="chatbox__footer">
+									<img src="pictures/iconic/emojis.svg" alt="">
+									<img src="pictures/iconic/microphone.svg" alt="">
+									<input type="text" placeholder="Write a message...">
+									<p class="chatbox__send--footer">Send</p>
+									<img src="pictures/iconic/attachment.svg" alt="">
+								</div>
+							</div>
+							<div class="chatbox__button">
+								<button>button</button>
+							</div>
+						</div>
+					</div>
+					<script src="assez/jss/Chat.js"></script>
+					<script src="./app.js"></script>
 
 				</div>
 
@@ -486,7 +527,7 @@
 		window.onscroll = function() {myFunction()};
 
 
-		var header = document.getElementById("chat");
+		var header = document.getElementsByClassName('container_chatwindow');
 		var sticky = header.offsetTop;
 
 
